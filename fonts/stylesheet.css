@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Doloman-Pavljenko-Light';
+  src: url('dolomanpavljenko-webfont.eot');
+  src: url('dolomanpavljenko-webfont.eot?#iefix') format('embedded-opentype'),
+    url('dolomanpavljenko-webfont.woff2') format('woff2'),
+    url('dolomanpavljenko-webfont.woff') format('woff'),
+    url('dolomanpavljenko-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
