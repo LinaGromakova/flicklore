@@ -3,9 +3,234 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="fonts/stylesheet.css" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
     <link rel="stylesheet" href="css/style.min.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link rel="icon" href="images/favicon/favicon.ico" />
+
     <title>Flicklore</title>
   </head>
-  <body></body>
+  <body data-theme="dark">
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="btn-col">
+            <button
+              class="header-btn js-btn-filter"
+              title="Open filter"
+              type="button"
+              link="Фильтрация по жанрам"
+            >
+              <svg height="16.5" viewBox="0 -960 760 660" width="19">
+                <path
+                  d="m 610,-300 q -63,0 -106.5,-43.5 Q 460,-387 460,-450 460,-513 503.5,-556.5 547,-600 610,-600 q 63,0 106.5,43.5 43.5,43.5 43.5,106.5 0,63 -43.5,106.5 Q 673,-300 610,-300 Z m 0,-80 q 29,0 49.5,-20.5 Q 680,-421 680,-450 680,-479 659.5,-499.5 639,-520 610,-520 q -29,0 -49.5,20.5 -20.5,20.5 -20.5,49.5 0,29 20.5,49.5 Q 581,-380 610,-380 Z M 60,-410 v -80 h 320 v 80 z m 90,-250 Q 87,-660 43.5,-703.5 0,-747 0,-810 0,-873 43.5,-916.5 87,-960 150,-960 q 63,0 106.5,43.5 43.5,43.5 43.5,106.5 0,63 -43.5,106.5 Q 213,-660 150,-660 Z m 0,-80 q 29,0 49.5,-20.5 Q 220,-781 220,-810 220,-839 199.5,-859.5 179,-880 150,-880 q -29,0 -49.5,20.5 Q 80,-839 80,-810 q 0,29 20.5,49.5 20.5,20.5 49.5,20.5 z m 230,-30 v -80 h 320 v 80 z m 230,320 z M 150,-810 Z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="logo"><a href="index.html">Flicklore</a></div>
+          <div class="btn-col">
+            <button class="header-btn js-btn-search" title="Открыть поиск" type="button">
+              <svg height="18" viewBox="0 -960 720 720" width="18">
+                <path
+                  d="M 664,-240 412,-492 q -30,24 -69,38 -39,14 -83,14 -109,0 -184.5,-75.5 Q 0,-591 0,-700 0,-809 75.5,-884.5 151,-960 260,-960 q 109,0 184.5,75.5 75.5,75.5 75.5,184.5 0,44 -14,83 -14,39 -38,69 l 252,252 z M 260,-520 q 75,0 127.5,-52.5 Q 440,-625 440,-700 440,-775 387.5,-827.5 335,-880 260,-880 185,-880 132.5,-827.5 80,-775 80,-700 q 0,75 52.5,127.5 Q 185,-520 260,-520 Z"
+                />
+              </svg>
+            </button>
+            <button class="header-btn js-btn-theme" title="Сменить тему">
+              <svg height="18" viewBox="0 -960 720 720" width="18">
+                <path
+                  d="M 360,-240 Q 210,-240 105,-345 0,-450 0,-600 q 0,-150 105,-255 105,-105 255,-105 14,0 27.5,1 13.5,1 26.5,3 -41,29 -65.5,75.5 Q 324,-834 324,-780 q 0,90 63,153 63,63 153,63 55,0 101,-24.5 46,-24.5 75,-65.5 2,13 3,26.5 1,13.5 1,27.5 0,150 -105,255 -105,105 -255,105 z m 0,-80 q 88,0 158,-48.5 70,-48.5 102,-126.5 -20,5 -40,8 -20,3 -40,3 -123,0 -209.5,-86.5 Q 244,-657 244,-780 q 0,-20 3,-40 3,-20 8,-40 -78,32 -126.5,102 -48.5,70 -48.5,158 0,116 82,198 82,82 198,82 z m -10,-270 z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <section class="fullscreen"></section>
+      <main class="main">
+
+        <div class="container">
+          <h1>Актуальные фильмы</h1>
+          <div class="movie-card-wrapper">
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+            <div class="movie-card">
+              <div class="movie-rating-card">7.7</div>
+            </div>
+          </div>
+        </div>
+        <div class="pagination-wrapper">
+          <button class="btn-pagination" title="Прошлая страница">
+            <svg height="12" viewBox="0 -960 296 480" width="7.4000001">
+              <path d="M 240,-480 0,-720 l 240,-240 56,56 -184,184 184,184 z" id="path2" />
+            </svg></button
+          ><button class="btn-pagination">1</button> <button class="btn-pagination">2</button
+          ><button class="btn-pagination">3</button>
+          <button class="btn-pagination" title="Выбрать страницу">...</button
+          ><button class="btn-pagination" title="Последняя страница">500</button
+          ><button class="btn-pagination" title="Следующая страница">
+            <svg height="12" viewBox="0 -960 296 480" width="7.4000001">
+              <path d="M 56,-480 296,-720 56,-960 0,-904 184,-720 0,-536 Z" id="path2" />
+            </svg>
+          </button>
+        </div>
+      </main>
+      <!-- <div class="wrapper-error">
+          <h3 class="error-title">404</h3>
+          <p class="error-subtitle">Страница не найдена, попробуйте позже</p>
+        </div> -->
+      <!-- <aside class="search-wrapper">
+        <button class="btn-close">
+          <svg viewBox="0 -960 560 560">
+            <path
+              d="M 56,-400 0,-456 224,-680 0,-904 l 56,-56 224,224 224,-224 56,56 -224,224 224,224 -56,56 -224,-224 z"
+            />
+          </svg>
+        </button>
+        <form action="#">
+          <input type="search" id="search" placeholder="Введите название фильма..." />
+          <button class="search-btn">
+            <svg height="50" viewBox="0 -960 640 480" width="50">
+              <path d="m 400,-480 -56,-58 142,-142 H 0 v -80 h 486 l -142,-142 56,-58 240,240 z" />
+            </svg>
+          </button>
+        </form>
+      </aside> -->
+      <!-- <aside class="sidebar-filter">
+        <button class="btn-hide">
+          <svg height="19" viewBox="0 -960 296 480" width="12">
+            <path d="M 56,-480 296,-720 56,-960 0,-904 184,-720 0,-536 Z" id="path2" />
+          </svg>
+        </button>
+
+       
+        <div class="filter-wrapper">
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+
+          <input type="checkbox" name="Экшен" class="filter-btn" value="Экшен" />
+        </div>
+      </aside> -->
+      <!-- <button class="reset" id="clear-filter">Отменить фильтры</button>
+      <button class="reset" id="clear-search">Отменить поиск</button> -->
+    <!-- </div> -->
+    <div class="wrapper-card-info">
+      <div class="card-info">
+        <button class="btn-close">
+          <svg viewBox="0 -960 560 560">
+            <path
+              d="M 56,-400 0,-456 224,-680 0,-904 l 56,-56 224,224 224,-224 56,56 -224,224 224,224 -56,56 -224,-224 z"
+            />
+          </svg>
+        </button>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpUd5slHL5adwDL8TxpEsESk01qN8dGV0Xeg&s"
+          alt="poster"
+          class="img-poster"
+        />
+        <div class="card-info-main">
+          <h2>Film name</h2>
+          <p>1920</p>
+          <div class="rating">
+            <img src="images/icons/rate/star-rate-full.svg" alt="" />
+            <img src="images/icons/rate/star-rate-full.svg" alt="" />
+            <img src="images/icons/rate/star-rate-full.svg" alt="" />
+            <img src="images/icons/rate/star-rate-half.svg" alt="" />
+            <img src="images/icons/rate/star-rate-empty.svg" alt="" />
+
+            7.4
+          </div>
+          <span class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quos saepe, vel magni
+            molestias delectus hic reiciendis rem veritatis cum nisi. Ullam sint id aspernatur quam
+            consequatur omnis eaque ipsam? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Facilis, at doloribus necessitatibus laborum sit consequuntur dolore repudiandae veniam,
+            provident vero delectus veritatis. Veritatis voluptates blanditiis rem, minus
+            consectetur accusamus tenetur? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Fugit repudiandae, beatae non error optio aliquid obcaecati adipisci, neque accusamus
+            nam delectus facere vero in. Expedita pariatur suscipit animi in laboriosam. Hic quam
+            dicta voluptatum? Quisquam maiores ut minima molestias quaerat repudiandae delectus vero
+            modi sunt iusto fugiat aliquid distinctio id iste ipsum totam numquam ea recusandae,
+            dignissimos mollitia nemo consectetur. Distinctio tenetur a eum. Omnis at recusandae,
+            tempora id fugit vitae voluptates. Numquam modi a error quaerat? Fugit perferendis dolor
+            esse hic ea velit molestias facere! Error obcaecati id asperiores.
+          </span>
+          <button class="btn-main">
+            <svg height="14" viewBox="0 -960 440 560" width="11">
+              <path d="m 0,-400 v -560 l 440,280 z m 80,-280 z m 0,134 210,-134 -210,-134 z" />
+            </svg>
+            Смотреть трейлер
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
+
+<!-- <svg
+   height="22"
+   viewBox="0 -960 880 880"
+   width="22"
+  >
+ 
+  <path
+     d="m 400,-800 v -160 h 80 v 160 z m 266,110 -55,-55 112,-115 56,57 z m 54,210 v -80 h 160 v 80 z M 400,-80 v -160 h 80 v 160 z m -186,-612 -114,-111 57,-56 113,113 z m 508,512 -111,-115 54,-54 114,110 z M 0,-480 v -80 h 160 v 80 z m 157,300 -56,-57 112,-112 29,27 29,28 z m 283,-100 q -100,0 -170,-70 -70,-70 -70,-170 0,-100 70,-170 70,-70 170,-70 100,0 170,70 70,70 70,170 0,100 -70,170 -70,70 -170,70 z m 0,-80 q 66,0 113,-47 47,-47 47,-113 0,-66 -47,-113 -47,-47 -113,-47 -66,0 -113,47 -47,47 -47,113 0,66 47,113 47,47 113,47 z m 0,-160 z"
+     />
+</svg> -->
