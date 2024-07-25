@@ -8,9 +8,10 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="star-rate-empty.svg"
+   sodipodi:docname="star-rate-third.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -34,7 +35,29 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1730">
+      <stop
+         style="stop-color:#f3c356;stop-opacity:1;"
+         offset="0.28915665"
+         id="stop1726" />
+      <stop
+         style="stop-color:#f3c356;stop-opacity:0;"
+         offset="0.57831329"
+         id="stop1728" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1730"
+       id="linearGradient1732"
+       x1="44.669399"
+       y1="89.04998"
+       x2="64.18454"
+       y2="89.04998"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <g
      inkscape:label="Слой 1"
      inkscape:groupmode="layer"
@@ -42,7 +65,7 @@
      transform="translate(-5.4940017,-1.2144808)">
     <path
        sodipodi:type="star"
-       style="fill:none;fill-opacity:1;stroke:#f3c356;stroke-width:0.529167;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:url(#linearGradient1732);fill-opacity:1;stroke:#f3c356;stroke-width:0.529167;stroke-dasharray:none;stroke-opacity:1"
        id="path788"
        inkscape:flatsided="false"
        sodipodi:sides="5"

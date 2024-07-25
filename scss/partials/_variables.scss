@@ -1,16 +1,19 @@
-$beige: #c3c0a0;
+$beige: #fefefe;
 $mokko: #4e4734;
 $coffee: #393323;
+$blue: #92bfc1;
+$burgundy: #4b2122;
 $brown: #26261d;
-$dark-brown: #1b1813;
+$dark-brown: #0c0c0c;
+$gradient-main: #4b2122;
 $index: calc(1vw + 1vh);
 :root {
-  --main-color-text: #4e4734;
-  --main-color-bg: #c3c0a0;
+  --main-color-text: #0c0c0c;
+  --main-color-bg: #fefefe;
 }
 body[data-theme='dark'] {
-  --main-color-text: #c3c0a0;
-  --main-color-bg: #1d1a15;
+  --main-color-text: #fefefe;
+  --main-color-bg: #0c0c0c;
 }
 @mixin header-btn {
   min-width: 35px;
@@ -19,6 +22,16 @@ body[data-theme='dark'] {
   border-radius: 50%;
   border: none;
   outline: none;
+  transition: transform 0.3s linear, background-color 0.5s;
+  &:disabled {
+    background-color: #606060;
+    svg {
+      fill: #fff;
+    }
+  }
+  &:hover {
+    transform: scale(1.07);
+  }
   &:nth-child(1) {
     margin-right: 15px;
   }
@@ -32,9 +45,9 @@ body[data-theme='dark'] {
   font-weight: 600;
 }
 @mixin description {
-  font-size: 18px;
+  font-size: calc($index * 1.15);
   font-weight: 500;
-  max-height: 90px;
+  max-height: 100px;
   overflow-y: auto;
   margin: 25px 0px;
   display: block;
@@ -51,21 +64,22 @@ body[data-theme='dark'] {
   }
 }
 @mixin main-title {
-  font-size: 45px;
+  font-size: calc($index * 1.5);
   text-transform: uppercase;
   font-weight: 600;
   margin: 0px 0px 10px 0px;
 }
 @mixin filter-values {
-  font-size: 15px;
+  font-size: calc($index * 0.8);
   text-transform: uppercase;
   font-weight: 600;
   color: var(--main-color-text);
 }
 @mixin pagination-btn {
-  margin: 0px 15px;
-  width: 50px;
-  height: 50px;
+  position: relative;
+  margin: 0px 10px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   font-size: 22px;
   font-weight: 700;
@@ -73,12 +87,28 @@ body[data-theme='dark'] {
   color: var(--main-color-text);
   border: none;
   outline: none;
+  transition-duration: 0.5s;
   &:nth-child(7),
   &:nth-child(1) {
     border: 1px solid var(--main-color-text);
+    transition: border 0.5s;
+  }
+  &:disabled {
+    color: #606060;
+  }
+  &:nth-child(7):hover,
+  &:nth-child(1):hover {
+    border: 1px solid #a90329;
+    svg {
+      fill: #a90329;
+    }
+  }
+  &:hover {
+    color: #a90329;
   }
   svg {
     fill: var(--main-color-text);
+    transition: fill 0.5s;
   }
 }
 
@@ -90,31 +120,38 @@ body[data-theme='dark'] {
   width: 45px;
   height: 45px;
   inset: 2.5% 2.5% auto auto;
+  transition: transform 0.5s;
   z-index: 2500;
+  &:hover {
+    transform: rotate(45deg);
+  }
   svg {
-    fill: var(--main-color-text);
+    fill: $beige;
     width: 25px;
     height: 25px;
   }
 }
 
 @mixin btn-main {
-  padding: 15px;
-  font-size: 20px;
-  border-radius: 25px;
-  font-weight: 700;
-  color: var(--main-color-bg);
-  background-color: var(--main-color-text);
+  padding: 10px 25px;
+  font-size: calc($index * 1.2);
+  border-radius: 22px;
+  color: $beige;
+  background: $gradient-main;
+  background-clip: border-box;
   outline: none;
   border: none;
   display: flex;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   align-items: center;
+  transition: transform 0.5s linear;
+  &:hover {
+    transform: scale(1.05);
+  }
   svg {
     margin-right: 10px;
     width: 20px;
     height: 20px;
-    fill: var(--main-color-bg);
+    fill: $beige;
   }
 }
