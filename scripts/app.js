@@ -6,17 +6,9 @@ import { preloaderShow } from './units/preloader.js';
 let theme = 'dark';
 const btnThemeChange = document.querySelector('.js-btn-theme');
 btnThemeChange.addEventListener('click', () => {
-  document.querySelector('.filter-wrapper').innerHTML = '';
   document.body.dataset.theme == 'dark'
     ? (document.body.dataset.theme = 'light')
     : (document.body.dataset.theme = 'dark');
-  if (document.body.dataset.theme == 'dark') {
-    theme = 'dark';
-    return generateFilters(theme);
-  } else {
-    theme = 'light';
-    return generateFilters(theme);
-  }
 });
 const slider = document.querySelector('.swiper-wrapper');
 const wrapperEl = document.querySelector('.movie-card-wrapper');
@@ -35,10 +27,12 @@ const btnCloseFilter = document.querySelector('.btn-filter-hide');
 
 btnFilterOpen.addEventListener('click', () => {
   filterWrapper.classList.add('active');
+  btnThemeChange.disabled = true;
   btnSearchOpen.disabled = true;
 });
 btnCloseFilter.addEventListener('click', () => {
   filterWrapper.classList.remove('active');
+  btnThemeChange.disabled = false;
   btnSearchOpen.disabled = false;
 });
 const btnCloseSearch = document.querySelector('.js-btn-close-search');
@@ -105,11 +99,11 @@ let j = 1;
 let url = ``;
 let genres = '';
 paginationWrap.innerHTML = paginationHTML;
-//preloaderShow();
+preloaderShow();
 
 function generateLibrary() {
-  i == 2 ? (btnClearSearch.style.display = ``) : (btnClearSearch.style.display = 'none');
-  j == 2 ? (btnClearFilter.style.display = ``) : (btnClearFilter.style.display = 'none');
+  i == 2 ? btnClearSearch.classList.add('active') : btnClearSearch.classList.remove('active');
+  j == 2 ? btnClearFilter.classList.add('active') : btnClearFilter.classList.remove('active');
   let searchValue = searchEl.value;
   if (i == 1) {
     url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&language=ru-RU&page=${page}&sort_by=popularity.desc&api_key=${apiKey}`;
@@ -144,7 +138,7 @@ function generateLibrary() {
           document.querySelector('.btn-last-page').textContent = 500;
         }
         if (movies.results.length == 0) {
-          generateHTML += `
+          document.querySelector('.content').innerHTML = `
           <div class="wrapper-error">
             <h3 class="error-title">404</h3>
             <p class="error-subtitle">Страница не найдена, попробуйте позже</p>
@@ -189,27 +183,30 @@ function generateLibrary() {
     getInfo();
   }
   getLibrary();
-  paginationWrap.innerHTML = paginationHTML;
   let inpSelectNumPage = document.querySelector('.input-select-page');
   document.querySelector('.btn-select').addEventListener('click', () => {
     inpSelectNumPage.classList.add('active');
   });
   inpSelectNumPage.addEventListener('blur', () => {
     inpSelectNumPage.classList.remove('active');
-    inpSelectNumPage.value == '' ? page : (page = inpSelectNumPage.value);
-    page > totalPage ? (page = totalPage) : true;
-    pageNext = page * 1 + 1;
-    pageАfter = pageNext * 1 + 1;
+    if (inpSelectNumPage.value == '') {
+      return page;
+    } else {
+      page = inpSelectNumPage.value;
+      page > totalPage ? (page = totalPage) : true;
+      pageNext = page * 1 + 1;
+      pageАfter = pageNext * 1 + 1;
 
-    generateLibrary();
+      return generateLibrary();
+    }
   });
 
   document.querySelector('.btn-next').addEventListener('click', () => {
     generateHTML = '';
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: 'smooth',
-    // });
+    window.scrollTo({
+      top: 600,
+      behavior: 'smooth',
+    });
     if (page !== totalPage) {
       page++;
       pageNext++;
@@ -221,10 +218,10 @@ function generateLibrary() {
   });
   document.querySelector('.btn-prev').addEventListener('click', () => {
     generateHTML = '';
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: 'smooth',
-    // });
+    window.scrollTo({
+      top: 600,
+      behavior: 'smooth',
+    });
     if (page == 1) {
       page = 1;
     } else {
@@ -299,35 +296,24 @@ function getInfo() {
             genres += (genreId[id] + '  ').replaceAll('  ', ' | ').toUpperCase();
           });
           overlayInfo = `
-              <div class="card-info">
-                <button class="btn-close js-btn-close-card" title="Закрыть" tabindex="1">
-                  <svg viewBox="0 -960 560 560">
-                    <path
-                      d="M 56,-400 0,-456 224,-680 0,-904 l 56,-56 224,224 224,-224 56,56 -224,224 224,224 -56,56 -224,-224 z"
-                    />
-                  </svg>
-                </button>
-                <img
-                  src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"
-                  alt="poster"
-                  class="img-poster"
-                />
-                <div class="card-info-main">
-                  <h2>${movie.title}</h2>
-                  <p>${movie.release_date.slice(0, 4)}</p>
-                  <p class="genres">${genres.slice(0, -2)}</p>
-                  <div class="rating">
-                   <div class="rating-num">${movie.vote_average.toFixed(1)}</div>
-                   <div class="stars-wrapper">${generateStars(movie.vote_average.toFixed(1))} </div>
-                  </div>
-                  <span class="description">
-                  ${movie.overview}
-                  </span>
-                  <div class="link-wrapper" data-js-link-id="${movie.id}">
-
-                  </div>
-                </div>
-              </div>
+          <div class="card-info">
+            <button class="btn-close js-btn-close-card" title="Закрыть" tabindex="1">
+              <svg height="20" viewBox="0 -960 470.99998 800" width="11.775" fill="#e8eaed">
+                <path d="M 71,-160 0,-231 329,-560 0,-889 l 71,-71 400,400 z" />
+              </svg>
+            </button>
+            <img
+              src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"
+              alt="poster" class="img-poster"/>
+            <div class="card-info-main">
+              <h2>${movie.title}</h2>
+              <p class="date-release">${movie.release_date.slice(0, 4)}</p>
+              <p class="genres">${genres.slice(0, -2)}</p>
+              <div class="rating">${movie.vote_average.toFixed(1)} / 10</div>
+              <span class="description"> ${movie.overview} </span>
+              <div class="link-wrapper" data-js-link-id="${movie.id}"></div>
+            </div>
+          </div>
             `;
           const wrapperCardInfoEl = document.querySelector('.wrapper-card-info');
           wrapperCardInfoEl.innerHTML = overlayInfo;
@@ -343,7 +329,6 @@ function getInfo() {
     });
   });
 }
-
 generateSlider();
 
 btnClearSearch.addEventListener('click', () => {
@@ -390,11 +375,8 @@ btnClearFilter.addEventListener('click', () => {
   generateLibrary();
 });
 
-function generateFilters(theme) {
-  Object.entries(genreId).forEach((el) => {
-    document.querySelector(
-      '.filter-wrapper'
-    ).innerHTML += `<input type="checkbox" name="${el[1]}" class="filter-btn filter" value="${el[0]}" style="background-image: url('images/icons/filters/${el[1]}-${theme}.svg')"/>`;
-  });
-}
-generateFilters(theme);
+Object.entries(genreId).forEach((el) => {
+  document.querySelector(
+    '.filter-wrapper'
+  ).innerHTML += `<input type="checkbox" name="${el[1]}" class="filter-btn filter" value="${el[0]}" style="background-image: url('images/icons/filters/${el[1]}.svg')"/>`;
+});

@@ -1,19 +1,18 @@
 $beige: #fefefe;
-$mokko: #4e4734;
-$coffee: #393323;
-$blue: #92bfc1;
+$red: #8d0f11;
 $burgundy: #4b2122;
-$brown: #26261d;
 $dark-brown: #0c0c0c;
-$gradient-main: #4b2122;
+$gray: #474747;
 $index: calc(1vw + 1vh);
 :root {
-  --main-color-text: #0c0c0c;
+  --main-color-text: #8d0f11;
   --main-color-bg: #fefefe;
+  --highlight-color: #0c0c0c;
 }
 body[data-theme='dark'] {
   --main-color-text: #fefefe;
   --main-color-bg: #0c0c0c;
+  --highlight-color: #8d0f11;
 }
 @mixin header-btn {
   min-width: 35px;
@@ -24,7 +23,7 @@ body[data-theme='dark'] {
   outline: none;
   transition: transform 0.3s linear, background-color 0.5s;
   &:disabled {
-    background-color: #606060;
+    background-color: $gray;
     svg {
       fill: #fff;
     }
@@ -49,13 +48,14 @@ body[data-theme='dark'] {
   font-weight: 500;
   max-height: 100px;
   overflow-y: auto;
-  margin: 25px 0px;
+  padding-right: 5px;
+  margin: 35px 0px;
   display: block;
   &::-webkit-scrollbar {
     width: 3px;
   }
   &::-webkit-scrollbar-track {
-    background: $mokko;
+    background: $burgundy;
     border-radius: 1.5px;
   }
   &::-webkit-scrollbar-thumb {
@@ -64,16 +64,15 @@ body[data-theme='dark'] {
   }
 }
 @mixin main-title {
-  font-size: calc($index * 1.5);
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 0px 0px 10px 0px;
+  font-size: calc($index * 2.5);
+
+  font-weight: 500;
 }
 @mixin filter-values {
   font-size: calc($index * 0.8);
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--main-color-text);
+  color: $beige;
 }
 @mixin pagination-btn {
   position: relative;
@@ -94,17 +93,17 @@ body[data-theme='dark'] {
     transition: border 0.5s;
   }
   &:disabled {
-    color: #606060;
+    color: $gray;
   }
   &:nth-child(7):hover,
   &:nth-child(1):hover {
-    border: 1px solid #a90329;
+    border: 1px solid var(--highlight-color);
     svg {
-      fill: #a90329;
+      fill: var(--highlight-color);
     }
   }
   &:hover {
-    color: #a90329;
+    color: var(--highlight-color);
   }
   svg {
     fill: var(--main-color-text);
@@ -119,39 +118,64 @@ body[data-theme='dark'] {
   outline: none;
   width: 45px;
   height: 45px;
+  border: 50%;
   inset: 2.5% 2.5% auto auto;
   transition: transform 0.5s;
   z-index: 2500;
   &:hover {
-    transform: rotate(45deg);
+    transform: translateX(10px);
   }
   svg {
-    fill: $beige;
+    fill: var(--main-color-text);
     width: 25px;
     height: 25px;
   }
 }
 
 @mixin btn-main {
-  padding: 10px 25px;
+  position: relative;
+  padding: calc($index * 0.3);
   font-size: calc($index * 1.2);
-  border-radius: 22px;
-  color: $beige;
-  background: $gradient-main;
-  background-clip: border-box;
   outline: none;
-  border: none;
+  border: 1px solid var(--main-color-text);
   display: flex;
-  font-weight: 600;
+  font-weight: 700;
   align-items: center;
+  background-color: transparent;
   transition: transform 0.5s linear;
-  &:hover {
-    transform: scale(1.05);
+  color: var(--main-color-text);
+  &::after {
+    content: '';
+    border: 1px solid var(--main-color-text);
+    position: absolute;
+    display: block;
+    width: 100%;
+    inset: 0;
+    height: 100%;
+    transform: scaleX(1);
+    transition-duration: 0.5s;
+  }
+  &::before {
+    content: '';
+    border: 1px solid var(--main-color-text);
+    position: absolute;
+    display: block;
+    width: 100%;
+    inset: 0;
+    height: 100%;
+    transform: scaleY(1);
+    transition-duration: 0.5s;
+  }
+  &:hover::before {
+    transform: scaleY(1.4);
+  }
+  &:hover::after {
+    transform: scaleX(1.1);
   }
   svg {
     margin-right: 10px;
-    width: 20px;
-    height: 20px;
-    fill: $beige;
+    width: calc($index * 1.2);
+    height: calc($index * 1.2);
+    fill: var(--main-color-text);
   }
 }
