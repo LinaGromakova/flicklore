@@ -1,9 +1,7 @@
 import generateSlider from './units/slider.js';
-import { generateStars } from './units/generateRating.js';
 import { getTrailer } from './units/getTrailer.js';
 import { preloaderShow } from './units/preloader.js';
 
-let theme = 'dark';
 const btnThemeChange = document.querySelector('.js-btn-theme');
 btnThemeChange.addEventListener('click', () => {
   document.body.dataset.theme == 'dark'
@@ -70,7 +68,6 @@ let arrPages = [page, pageNext, pageАfter];
 const apiKey = '298a48829dc126ce25273ee5142aee47';
 let overlayInfo = '';
 let generateHTML = '';
-
 let totalPage = 500;
 let paginationWrap = document.querySelector('.pagination-wrapper');
 let paginationHTML = `
@@ -169,7 +166,6 @@ function generateLibrary() {
           </div>
         `;
       });
-
     wrapperEl.innerHTML = generateHTML;
     pageNext = +page + 1;
     pageАfter = +pageNext + 1;
@@ -192,15 +188,17 @@ function generateLibrary() {
     if (inpSelectNumPage.value == '') {
       return page;
     } else {
+      window.scrollTo({
+        top: 600,
+        behavior: 'smooth',
+      });
       page = inpSelectNumPage.value;
       page > totalPage ? (page = totalPage) : true;
       pageNext = page * 1 + 1;
       pageАfter = pageNext * 1 + 1;
-
       return generateLibrary();
     }
   });
-
   document.querySelector('.btn-next').addEventListener('click', () => {
     generateHTML = '';
     window.scrollTo({
@@ -232,6 +230,10 @@ function generateLibrary() {
     generateLibrary();
   });
   document.querySelectorAll('.btn-num-page').forEach((btn) => {
+    window.scrollTo({
+      top: 600,
+      behavior: 'smooth',
+    });
     btn.addEventListener('click', () => {
       page = +btn.textContent;
       pageNext = page + 1;
@@ -241,7 +243,6 @@ function generateLibrary() {
   });
 }
 generateLibrary();
-
 function generateSlides() {
   async function getRated() {
     let url = await fetch(
@@ -348,6 +349,10 @@ btnClearSearch.addEventListener('click', () => {
   generateLibrary();
 });
 btnSearch.addEventListener('click', (e) => {
+  window.scrollTo({
+    top: 600,
+    behavior: 'smooth',
+  });
   e.preventDefault();
   i = 2;
   page = 1;
@@ -358,6 +363,10 @@ btnSearch.addEventListener('click', (e) => {
 });
 
 document.querySelector('.btn-filter-apply').addEventListener('click', () => {
+  window.scrollTo({
+    top: 600,
+    behavior: 'smooth',
+  });
   j = 2;
   filterGenres = [];
   document.querySelectorAll('.filter-btn').forEach((filterEl) => {
@@ -367,6 +376,10 @@ document.querySelector('.btn-filter-apply').addEventListener('click', () => {
   generateLibrary();
 });
 btnClearFilter.addEventListener('click', () => {
+  window.scrollTo({
+    top: 600,
+    behavior: 'smooth',
+  });
   filterGenres = [];
   j = 1;
   document.querySelectorAll('.filter-btn').forEach((filterEl) => {

@@ -1,7 +1,7 @@
 $beige: #fefefe;
 $red: #8d0f11;
 $burgundy: #4b2122;
-$dark-brown: #0c0c0c;
+$dark: #0c0c0c;
 $gray: #474747;
 $index: calc(1vw + 1vh);
 :root {
@@ -49,7 +49,7 @@ body[data-theme='dark'] {
   max-height: 100px;
   overflow-y: auto;
   padding-right: 5px;
-  margin: 35px 0px;
+  margin: 25px 0px;
   display: block;
   &::-webkit-scrollbar {
     width: 3px;
@@ -65,7 +65,6 @@ body[data-theme='dark'] {
 }
 @mixin main-title {
   font-size: calc($index * 2.5);
-
   font-weight: 500;
 }
 @mixin filter-values {
@@ -73,6 +72,27 @@ body[data-theme='dark'] {
   text-transform: uppercase;
   font-weight: 600;
   color: $beige;
+  appearance: none;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: 25px;
+  background-size: calc($index * 1.5);
+  background-repeat: no-repeat;
+  transition-duration: 0.3s;
+  &::before {
+    content: attr(name);
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:checked {
+    background-color: $burgundy;
+  }
 }
 @mixin pagination-btn {
   position: relative;
