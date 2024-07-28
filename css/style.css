@@ -667,6 +667,7 @@ input[type=search]::-webkit-search-results-decoration {
   font-size: calc((1vw + 1vh) * 0.8);
   text-transform: uppercase;
   font-weight: 600;
+  padding: 30px 0px;
   color: #fefefe;
   -webkit-appearance: none;
      -moz-appearance: none;
