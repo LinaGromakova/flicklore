@@ -196,6 +196,7 @@ function generateLibrary() {
       page > totalPage ? (page = totalPage) : true;
       pageNext = page * 1 + 1;
       pageАfter = pageNext * 1 + 1;
+      inpSelectNumPage.value = '';
       return generateLibrary();
     }
   });
