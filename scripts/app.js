@@ -149,7 +149,7 @@ function generateLibrary() {
           movies.results.forEach((movie) => {
             generateHTML += `
             <div class="movie-card" data-card-id="${movie.id}" title="${movie.title}" tabindex="0">
-              <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}.jpg" alt="${
+              <img src="https://image.tmdb.org/t/p/w342/${movie.poster_path}.jpg" alt="${
               movie.title
             }" class="card-img" loading="lazy">
               <div class="movie-rating-card">${movie.vote_average.toFixed(1)}</div>
@@ -259,7 +259,7 @@ function generateSlides() {
           slideHTML += `
           <div class="swiper-slide" data-slide-id="${movie.id}">
             <div class="slide-wrapper">
-              <img src="https://image.tmdb.org/t/p/original${
+              <img src="https://image.tmdb.org/t/p/w1280${
                 movie.backdrop_path
               }.jpg" alt="background-fullscreen" class="fullscreen-img">
               <div class="container">
@@ -304,7 +304,7 @@ function getInfo() {
               </svg>
             </button>
             <img
-              src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"
+              src="https://image.tmdb.org/t/p/w342/${movie.poster_path}"
               alt="poster" class="img-poster"/>
             <div class="card-info-main">
               <h2>${movie.title}</h2>
@@ -339,11 +339,11 @@ btnClearSearch.addEventListener('click', () => {
   pageАfter = pageNext + 1;
 
   totalPage = 500;
-  // window.scrollTo({
-  //   top: 800,
-  //   left: 0,
-  //   behavior: 'smooth',
-  // });
+  window.scrollTo({
+    top: 800,
+    left: 0,
+    behavior: 'smooth',
+  });
   searchEl.value = '';
 
   generateLibrary();
