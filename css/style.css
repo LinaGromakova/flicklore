@@ -582,7 +582,7 @@ input[type=search]::-webkit-search-results-decoration {
   background-color: transparent;
   transition: transform 0.5s linear;
   color: var(--main-color-text);
-  margin-bottom: 60px;
+  margin-bottom: 65px;
   padding: 5px 25px;
   border: 1px solid #fefefe;
   color: #fefefe;
@@ -1007,7 +1007,7 @@ input[type=search]::-webkit-search-results-decoration {
   .wrapper-card-info .card-info .card-info-main {
     position: absolute;
     bottom: 0;
-    padding: 50px 20px;
+    padding: 50px 20px 100px 20px;
     min-width: 100%;
     background: linear-gradient(to top, rgba(12, 12, 12, 0.8) 88%, transparent 100%);
   }
@@ -1033,6 +1033,15 @@ input[type=search]::-webkit-search-results-decoration {
     fill: #fefefe;
   }
 }
+@media (max-width: 768px) and (orientation: landscape) {
+  .wrapper-card-info .card-info .card-info-main .description {
+    margin: 12px 0px;
+    max-height: 50px;
+  }
+  .wrapper-card-info .card-info .card-info-main .genres {
+    padding: 10px 0px;
+  }
+}
 @media (max-width: 768px) {
   .container {
     max-width: 80%;
@@ -1049,16 +1058,19 @@ input[type=search]::-webkit-search-results-decoration {
     font-size: 16px;
   }
   .btn-main,
-  .sidebar-filter .btn-filter-apply,
   .reset {
     padding: 3.5px 13px;
-    font-size: 15px;
+    font-size: 18px;
   }
   .btn-main svg,
-  .sidebar-filter .btn-filter-apply svg,
   .reset svg {
     height: 18px;
     width: 18px;
+  }
+  .btn-main .sidebar-filter .btn-filter-apply,
+  .reset .sidebar-filter .btn-filter-apply {
+    padding: 3.5px 13px;
+    font-size: 22px;
   }
   .wrapper-card-info .card-info .card-info-main h2 {
     font-size: calc((1vw + 1vh) * 3.6);
@@ -1067,11 +1079,10 @@ input[type=search]::-webkit-search-results-decoration {
     font-size: calc((1vw + 1vh) * 1.7);
   }
   .wrapper-card-info .card-info .card-info-main .description {
-    margin: 12px 0px;
+    max-height: 50px;
   }
   .wrapper-card-info .card-info .card-info-main .genres {
     font-size: calc((1vw + 1vh) * 1);
-    padding: 10px 0px;
   }
   .wrapper-card-info .card-info .card-info-main .rating {
     font-size: calc((1vw + 1vh) * 1.4);
@@ -1091,6 +1102,7 @@ input[type=search]::-webkit-search-results-decoration {
   .sidebar-filter .filter-wrapper .filter-btn {
     background-size: 22px 22px;
     font-size: 14px;
+    padding: 5px 0px;
   }
 }
 @media (max-width: 500px) {
