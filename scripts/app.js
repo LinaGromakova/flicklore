@@ -267,7 +267,7 @@ function generateSlides() {
                 <div class="slide-content">
                   <h2>${movie.title}</h2>
                   <p class="genres">${genres.slice(0, -2)}</p>
-                  <p class="desc">${movie.overview}</p>
+                  <p class="description">${movie.overview}</p>
                   <div class="link-wrapper" data-js-link-id="${movie.id}"></div>
                 </div>
               </div>

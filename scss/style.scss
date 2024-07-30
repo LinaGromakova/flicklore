@@ -206,7 +206,7 @@ input[type='search']::-webkit-search-results-decoration {
         @include main-title;
         max-width: 50%;
       }
-      .desc {
+      .description {
         @include description;
         max-width: 50%;
         animation-delay: 1s;
@@ -245,7 +245,7 @@ input[type='search']::-webkit-search-results-decoration {
   }
   h2,
   .genres,
-  .desc,
+  .description,
   .link-wrapper {
     opacity: 0;
     filter: blur(10px);
@@ -255,7 +255,7 @@ input[type='search']::-webkit-search-results-decoration {
   .genres {
     animation-delay: 0.8s;
   }
-  .desc {
+  .description {
     animation-delay: 1s;
   }
   .link-wrapper {
@@ -388,7 +388,7 @@ input[type='search']::-webkit-search-results-decoration {
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  height: 100vh;
+  height: 100lvh;
   inset: 0;
   background-color: rgba($color: $red, $alpha: 0.7);
   backdrop-filter: blur(5px);
@@ -580,7 +580,8 @@ input[type='search']::-webkit-search-results-decoration {
   position: fixed;
   background: linear-gradient(50deg, rgba(141, 15, 17, 0.5) 20%, var(--main-color-bg) 40%);
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
   z-index: -1;
   inset: 0;
   display: flex;
@@ -589,6 +590,16 @@ input[type='search']::-webkit-search-results-decoration {
   justify-content: center;
   opacity: 0;
   transition-duration: 1s;
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgba(#3a1617, 0.5);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($beige, 0.8);
+    border-radius: 5px;
+  }
   .card-info {
     display: flex;
     align-items: center;
@@ -699,18 +710,19 @@ input[type='search']::-webkit-search-results-decoration {
         left: 0;
         top: 0;
       }
+
       .card-info-main {
         position: absolute;
         bottom: 0;
-        padding: 50px 20px 100px 20px;
+        padding: 100px 20px;
         min-width: 100%;
+        min-height: 55%;
         background: linear-gradient(to top, rgba($color: $dark, $alpha: 0.8) 88%, transparent 100%);
         h2 {
           font-size: calc($index * 3);
         }
         .description {
           font-size: calc($index * 1.4);
-          margin: 15px 0px;
           max-width: 100%;
         }
         button {
@@ -752,7 +764,7 @@ input[type='search']::-webkit-search-results-decoration {
       max-width: 80%;
       font-size: 45px;
     }
-    .desc {
+    .description {
       max-width: 80%;
       font-size: 22px;
     }
@@ -762,8 +774,8 @@ input[type='search']::-webkit-search-results-decoration {
   }
   .btn-main,
   .reset {
-    padding: 3.5px 13px;
-    font-size: 18px;
+    padding: 5px 13px;
+    font-size: 20px;
     svg {
       height: 18px;
       width: 18px;
@@ -803,6 +815,9 @@ input[type='search']::-webkit-search-results-decoration {
   }
   .sidebar-filter {
     width: calc($index * 28);
+    .btn-filter-apply {
+      font-size: 22px;
+    }
     .filter-wrapper .filter-btn {
       background-size: 22px 22px;
       font-size: 14px;
