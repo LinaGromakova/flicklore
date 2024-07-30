@@ -369,6 +369,7 @@ document.querySelector('.btn-filter-apply').addEventListener('click', () => {
     behavior: 'smooth',
   });
   j = 2;
+  page = 1;
   filterGenres = [];
   document.querySelectorAll('.filter-btn').forEach((filterEl) => {
     filterEl.checked ? filterGenres.push(filterEl.value) : undefined;

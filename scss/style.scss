@@ -580,7 +580,7 @@ input[type='search']::-webkit-search-results-decoration {
   position: fixed;
   background: linear-gradient(50deg, rgba(141, 15, 17, 0.5) 20%, var(--main-color-bg) 40%);
   width: 100%;
-  min-height: 100vh;
+  max-height: 100lvh;
   overflow-y: auto;
   z-index: -1;
   inset: 0;
@@ -594,7 +594,6 @@ input[type='search']::-webkit-search-results-decoration {
     width: 2px;
   }
   &::-webkit-scrollbar-track {
-    background-color: rgba(#3a1617, 0.5);
   }
   &::-webkit-scrollbar-thumb {
     background-color: rgba($beige, 0.8);
@@ -743,6 +742,9 @@ input[type='search']::-webkit-search-results-decoration {
   }
 }
 @media (max-width: 768px) and (orientation: landscape) {
+  .sidebar-filter .filter-wrapper {
+    max-height: 45%;
+  }
   .wrapper-card-info .card-info {
     .card-info-main {
       .description {
