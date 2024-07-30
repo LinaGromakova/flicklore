@@ -882,6 +882,9 @@ input[type=search]::-webkit-search-results-decoration {
 .wrapper-card-info::-webkit-scrollbar {
   width: 2px;
 }
+.wrapper-card-info::-webkit-scrollbar-track {
+  background-color: rgba(58, 22, 23, 0.5);
+}
 .wrapper-card-info::-webkit-scrollbar-thumb {
   background-color: rgba(254, 254, 254, 0.8);
   border-radius: 5px;

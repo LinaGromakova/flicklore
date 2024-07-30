@@ -594,6 +594,7 @@ input[type='search']::-webkit-search-results-decoration {
     width: 2px;
   }
   &::-webkit-scrollbar-track {
+    background-color: rgba(#3a1617, 0.5);
   }
   &::-webkit-scrollbar-thumb {
     background-color: rgba($beige, 0.8);
